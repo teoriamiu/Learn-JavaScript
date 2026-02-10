@@ -2,7 +2,12 @@
 <html>
 <body>
 
-<h2>😀 ¡Introducción a JavaScript!</h2>
+<h2>🤑 ¡Introducción a JavaScript!</h2>
+
+<script>
+// Variable global usada en todos los ejemplos
+let value;
+</script>
 
 <script>
 // ===============================
@@ -16,9 +21,9 @@
 // Por ejemplo, esta sentencia declara una variable
 // y le asigna el valor 4:
 
-let myVariable = 4;
+value = 4;
 
-console.log(myVariable);
+console.log(value);
 // > 4
 </script>
 
@@ -36,9 +41,9 @@ console.log(myVariable);
 // Es común verlos junto a estructuras de control
 // como if, for o while:
 
-let x = 2;
+value = 2;
 
-if (x === 2) {
+if (value === 2) {
   console.log("algún comportamiento");
 }
 </script>
@@ -74,9 +79,9 @@ console.log((2 + 2) * 4);
 // El resultado de una expresión también puede
 // asignarse a una variable:
 
-let miVariable = (2 + 2);
+value = (2 + 2);
 
-console.log(miVariable);
+console.log(value);
 // > 4
 </script>
 
@@ -93,15 +98,6 @@ console.log(miVariable);
 // y convertir automáticamente los valores.
 // Este proceso se llama "coerción de tipos".
 
-// En lenguajes de tipado fuerte, como Python,
-// sumar una cadena y un número produce un error:
-
-// >>> "1" + 1
-// TypeError: cannot concatenate 'str' and 'int'
-
-// En JavaScript, en cambio, el número se convierte
-// en cadena y se concatenan ambos valores:
-
 console.log("1" + 1);
 // > "11"
 
@@ -109,17 +105,17 @@ console.log("1" + 1);
 // En este ejemplo, convertimos un número en una cadena
 // usando el método toString():
 
-let myyVariable = 100;
+value = 100;
 
-console.log(typeof myyVariable);
+console.log(typeof value);
 // > "number"
 
-myyVariable = myyVariable.toString();
+value = value.toString();
 
-console.log(myyVariable);
+console.log(value);
 // > "100"
 
-console.log(typeof myyVariable);
+console.log(typeof value);
 // > "string"
 </script>
 
@@ -130,12 +126,6 @@ console.log(typeof myyVariable);
 
 // A diferencia de HTML y la mayoría del CSS,
 // JavaScript distingue entre mayúsculas y minúsculas.
-//
-// Esto se aplica tanto a:
-// - Palabras clave
-// - Métodos
-// - Variables
-// - Identificadores definidos por el usuario
 
 console.log("Log esto.");
 // > Log esto.
@@ -143,12 +133,12 @@ console.log("Log esto.");
 // console.Log("Log esto también.");
 // > Uncaught TypeError: console.Log is not a function
 
-const myyyVariable = 2;
+value = 2;
 
-// console.log(myyyvariable);
-// > Uncaught ReferenceError: myyyvariable is not defined
+// console.log(Value);
+// > Uncaught ReferenceError: Value is not defined
 
-console.log(myyyVariable);
+console.log(value);
 // > 2
 </script>
 
@@ -158,8 +148,6 @@ console.log(myyyVariable);
 // ===============================
 
 // JavaScript no es sensible al espacio en blanco.
-// El intérprete ignora la cantidad y el tipo
-// de espacios o tabulaciones:
 
 console.log("Log esto"); console.log("Log esto también");
 // > "Log esto"
@@ -176,16 +164,9 @@ let a;
 // Tokens: [leta]
 // > Uncaught ReferenceError: leta is not defined
 
-// Cuando el espacio se usa para separar tokens,
-// la cantidad no importa:
-
 let           b                             =                           2;
 
 // Tokens: [let] [b] [=] [2]
-
-// Los saltos de línea también suelen ignorarse,
-// aunque en algunos casos pueden causar
-// finalización automática de sentencias:
 
 let c
 =
@@ -193,38 +174,26 @@ let c
 
 // Tokens: [let] [c] [=] [2]
 
-// Por convención, muchas sentencias se escriben
-// en una sola línea:
-
 let z = 1;
 let o = 2;
-
-// Otras suelen ocupar varias líneas:
 
 if (z === 2) {
   console.log("algún comportamiento");
 }
 
-// Pero JavaScript interpreta esto de la misma forma:
-
 let w=1;let y=2;
 
 if(w===2){console.log("algún comportamiento")};
 
-// Debido a esto, es común que en producción
-// se elimine el espacio en blanco innecesario
-// para reducir el tamaño del archivo (minificación).
+// Reglas de estilo en proyectos reales:
 
-// En proyectos reales, los equipos suelen definir
-// reglas de estilo para mantener el código legible:
+value = 10;
 
-let myyyyVariable = 10;
-
-if (typeof myyyyVariable === "number") {
+if (typeof value === "number") {
   console.log("Esta variable es un número.");
 }
 
-if (myyyyVariable > 5) {
+if (value > 5) {
   console.log("Esta variable es mayor que cinco.");
 }
 
