@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<body>
+  
+<h2>😄 ¡Booleanos!</h2>
+
+<script>
+// ===============================
+// Booleanos
+// ===============================
+
+// El tipo de dato booleano es un tipo lógico
+// que solo puede tener dos valores:
+// true o false.
+
+// ===============================
+// El objeto Boolean
+// ===============================
+
+// En JavaScript, todos los valores pueden evaluarse
+// implícitamente como true o false.
+//
+// La función Boolean() puede usarse para convertir
+// explícitamente un valor a un booleano,
+// según su "valor de verdad" (truthy o falsy):
+
+Boolean("A string literal");
+// > true
+
+// Existen valores que se consideran falsy.
+// Los más comunes son:
+// - 0
+// - -0
+// - null
+// - undefined
+// - NaN
+// - "" (cadena vacía)
+// - false
+//
+// Todos los demás valores son truthy.
+
+Boolean(NaN);
+// > false
+
+Boolean(-0);
+// > false
+
+Boolean(5);
+// > true
+
+// Aunque la cadena "false" parece representar falsedad,
+// sigue siendo una cadena no vacía, por lo tanto es truthy:
+
+Boolean("false");
+// > true
+
+// ===============================
+// Boolean como constructor (NO recomendado)
+// ===============================
+
+// Evita usar Boolean como constructor con new.
+// Esto crea un objeto Boolean,
+// no una primitiva booleana.
+
+const falseBoolean = Boolean(0);
+const falseObject = new Boolean(0);
+
+console.log(falseBoolean);
+// > false
+
+console.log(falseObject);
+// > Boolean { false }
+
+// valueOf() devuelve el valor primitivo
+// contenido dentro del objeto Boolean:
+
+falseObject.valueOf();
+// > false
+
+// ===============================
+// Problema con objetos Boolean
+// ===============================
+
+// Todos los objetos en JavaScript son truthy,
+// independientemente del valor que contengan.
+//
+// Por eso, un objeto Boolean que contiene false
+// sigue evaluándose como verdadero en contextos lógicos:
+
+const falseBooleano = Boolean(0);
+const falseObjecto = new Boolean(0);
+
+console.log(falseBooleano == true);
+// > false
+
+console.log(falseObjecto == true);
+// > false
+
+// El operador !! fuerza la conversión a booleano.
+// En este caso, devuelve true porque falseObject es un objeto:
+
+console.log(!!falseObjecto);
+// > true
+</script>
+
+</body>
+</html>
