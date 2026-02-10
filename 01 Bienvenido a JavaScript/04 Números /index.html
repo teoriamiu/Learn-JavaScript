@@ -1,65 +1,214 @@
 <!DOCTYPE html>
 <html>
 <body>
-<script>
-// El objeto numérico
 
-// Cuando se pasa un valor a la función Number(), ese valor se convierte en el equivalente numérico.Por ejemplo, una cadena numérica da como resultado una cadena equivalente Número primitivo:
-  
-  
-console.log(Number("10")); 
+<h2>😁 ¡Números!</h2>
+
+<script>
+// ===============================
+// El objeto Number
+// ===============================
+
+// Cuando se pasa un valor a la función Number(),
+// ese valor se convierte a su equivalente numérico primitivo.
+// Por ejemplo, una cadena que contiene solo números
+// se convierte en un número:
+
+console.log(Number("10"));
 // > 10
 
-// Si pasas un valor de false o null a Number(), se muestra 0 y true.1
+// Si se pasa false o null a Number(),
+// el resultado es 0.
+// Si se pasa true, el resultado es 1:
 
-
-console.log(Number(null)); 
+console.log(Number(null));
 // > 0
 
-console.log(Number(false)); 
+console.log(Number(false));
 // > 0
 
-console.log(Number(true)); 
+console.log(Number(true));
 // > 1
 
-// Si un valor no se puede convertir, como en el caso de undefined o una string que contiene caracteres no numéricos, la función Number muestra NaN:
-  
-  
-console.log(Number(undefined)); 
+// Si un valor no puede convertirse a número,
+// como undefined o una cadena con caracteres no numéricos,
+// Number() devuelve NaN ("Not a Number"):
+
+console.log(Number(undefined));
 // > NaN
 
-console.log(Number("The number 3.")); 
+console.log(Number("The number 3."));
 // > NaN
 
-// Como se detalla en la herencia prototípica, Es probable que no tengas motivos para usar el objeto Number como porque crea un objeto Number en lugar de un literal numérico.
+// Aunque existe el objeto Number (usando new Number()),
+// normalmente no hay razones prácticas para usarlo.
+// Esto crea un objeto en lugar de un número primitivo:
 
 let numObject = new Number(15);
 
-console.log(numObject); 
+console.log(numObject);
 // > Number { 15 }
 
-// Este objeto se comporta como su valor asignado para operaciones matemáticas, pero falla en las comparaciones de igualdad estrictas con literales numéricos no coinciden sin proporcionar ningún beneficio práctico en comparación con un valor literal.
+// El objeto Number se comporta como un número
+// en operaciones matemáticas,
+// pero falla en comparaciones de igualdad estricta (===)
+// con números primitivos, sin aportar beneficios reales:
 
 let tenObject = new Number(10);
 
-console.log(tenObject + 5); 
+console.log(tenObject + 5);
 // > 15
 
-console.log(tenObject === 10); 
+console.log(tenObject === 10);
 // > false
 </script>
+
 <script>
+// ===============================
 // Números enteros y flotantes
+// ===============================
 
-// JavaScript solo tiene un tipo de número: IEEE 754 - 1985 de doble precisión de 64 bits números de punto flotante entre - 2 ^ 1024 y 2 ^ 1024. Antes de que JavaScript almacene cualquier número en la memoria, primero convierte ese número en un número binario de punto flotante, también llamado flotante.
+// JavaScript solo tiene un tipo de número:
+// números de punto flotante de doble precisión
+// (IEEE 754, 64 bits).
+// Estos números pueden representar valores
+// aproximadamente entre −2^1024 y 2^1024.
 
-// Este almacenamiento de 64 bits(un bit de“ signo” positivo o negativo, 11 bits para un exponente y 52 bits para una fracción) puede causar errores de precisión con cualquier número de dígitos que no encajan en un rango permitido.Esta limitación es inherente al tipo de datos numérico de JavaScript.
+// Antes de almacenarse en memoria,
+// cualquier número se convierte internamente
+// a una representación binaria de punto flotante.
 
+// El formato de 64 bits se divide en:
+// - 1 bit de signo
+// - 11 bits para el exponente
+// - 52 bits para la fracción (mantisa)
+
+// Esta representación puede causar errores de precisión
+// con algunos números decimales:
 
 console.log(0.1 + 0.7);
 // > 0.7999999999999999
 
-// En su lugar, se puede almacenar un valor numérico como integer, un número de punto flotante sin una fracción entre -(2^53 − 1) y 2^53 − 1. Debido a que flota y los números enteros se almacenan de la misma manera, no hay diferencia práctica en cómo operan estos números. Sin embargo, recomendamos usar números enteros cuando posible para evitar errores de precisión.
+// JavaScript también puede representar números enteros
+// de forma segura entre -(2^53 − 1) y 2^53 − 1.
+// No existe una diferencia interna entre enteros y flotantes,
+// pero se recomienda usar enteros cuando sea posible
+// para evitar errores de precisión.
 </script>
+
+<script>
+/*
+===============================
+ OPERADORES NUMÉRICOS (JS)
+===============================
+
+Orden de operaciones:
+1) Paréntesis ()
+2) Exponentes (**)
+3) Multiplicación (*) y División (/)
+4) Suma (+) y Resta (-)
+
+-------------------------------
+ Operadores aritméticos
+-------------------------------
+
++  Adición
+   Uso: 2 + 2
+   Resultado: 4
+
+-  Resta
+   Uso: 4 - 2
+   Resultado: 2
+
+*  Multiplicación
+   Uso: 2 * 5
+   Resultado: 10
+
+/  División
+   Uso: 10 / 5
+   Resultado: 2
+
+++ Incremento
+   Suma 1 al valor de una variable
+   Uso correcto: x++
+   Resultado: x + 1
+
+-- Decremento
+   Resta 1 al valor de una variable
+   Uso correcto: x--
+   Resultado: x - 1
+
+** Exponente
+   Eleva el primer operando
+   a la potencia del segundo
+   Uso: 2 ** 4
+   Resultado: 16
+
+%  Resto (módulo)
+   Devuelve el resto de una división
+   Uso: 12 % 5
+   Resultado: 2
+
+-------------------------------
+ Operadores de asignación
+-------------------------------
+
++= Asignación de adición
+   Uso: myValue += 2
+
+-= Asignación de resta
+   Uso: myValue -= 2
+
+*= Asignación de multiplicación
+   Uso: myValue *= 2
+
+/= Asignación de división
+   Uso: myValue /= 2
+
+**= Asignación de exponentes
+    Uso: myValue **= 2
+
+%= Asignación de resto
+   Uso: myValue %= 2
+*/
+</script>
+
+<script>
+// ===============================
+// Valores simbólicos
+// ===============================
+
+// El tipo Number también incluye valores especiales:
+// - NaN (Not a Number)
+// - Infinity
+// - -Infinity
+
+// Infinity puede aparecer, por ejemplo,
+// al dividir un número por cero.
+// En JavaScript esto NO lanza un error:
+
+console.log(10 / 0);
+// > Infinity
+
+// JavaScript distingue entre mayúsculas y minúsculas.
+// Infinity es un valor numérico especial,
+// pero "infinity" no existe como identificador:
+
+console.log(Infinity);
+// > Infinity
+
+// console.log(infinity);
+// > Uncaught ReferenceError: infinity is not defined
+
+// NaN aparece cuando una operación matemática
+// no puede producir un número válido.
+// JavaScript intenta convertir valores cuando puede.
+// Por ejemplo, una cadena que contiene un número
+// puede participar en una operación matemática:
+
+console.log("2" * 2);
+// > 4
+</script>
+
 </body>
 </html>

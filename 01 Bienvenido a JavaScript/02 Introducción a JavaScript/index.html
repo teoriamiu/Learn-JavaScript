@@ -1,161 +1,222 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>🤑 ¡Introducción a JavaScript!</h2>
-<script>
-// Declaraciones
 
-// Una sentencia es una unidad de instrucción compuesta por una o más líneas de código que representan una acción.Por ejemplo, puedes usar la siguiente instrucción para asignar un valor a una variable llamada myVariable:
+<h2>😀 ¡Introducción a JavaScript!</h2>
+
+<script>
+// ===============================
+// Declaraciones (sentencias)
+// ===============================
+
+// Una sentencia es una instrucción completa que realiza
+// una acción en el programa.
+// Puede ocupar una o varias líneas de código.
+//
+// Por ejemplo, esta sentencia declara una variable
+// y le asigna el valor 4:
 
 let myVariable = 4;
- console.log(myVariable);
+
+console.log(myVariable);
 // > 4
 </script>
+
 <script>
-// Declaraciones de bloqueo
+// ===============================
+// Declaraciones de bloque
+// ===============================
 
-// Una sentencia de bloque agrupa cualquier cantidad de sentencias y declaraciones dentro de un par. de llaves ({}). Te permite combinar sentencias en lugares donde JavaScript espera solo una.
-
-// Con más frecuencia, verás sentencias de bloqueo al lado de de flujo de control, como if:
+// Una sentencia de bloque agrupa una o más sentencias
+// dentro de un par de llaves {}.
+//
+// Los bloques se usan cuando JavaScript espera
+// una sola sentencia, pero queremos ejecutar varias.
+//
+// Es común verlos junto a estructuras de control
+// como if, for o while:
 
 let x = 2;
 
-if ( x === 2 ) {
+if (x === 2) {
   console.log("algún comportamiento");
 }
 </script>
+
 <script>
+// ===============================
 // Expresiones
+// ===============================
 
-// Una expresión es una unidad de código que da como resultado un valor y, por lo tanto, puede cuando se espera un valor. 2 + 2 es una expresión que da como resultado el valor 4:
-
+// Una expresión es una unidad de código que produce un valor.
+// Las expresiones pueden usarse en cualquier lugar
+// donde JavaScript espera un valor.
+//
+// Por ejemplo, 2 + 2 es una expresión
+// cuyo resultado es 4:
 
 console.log(2 + 2);
 // > 4
 
-// El “operador de agrupación”, un par de paréntesis de cierre, se usa para agrupar partes de una expresión para asegurarte de que una parte de ella se se evalúe como una sola unidad. Por ejemplo, puedes usar un operador de agrupación para anular el orden matemático de las operaciones o para mejorar la legibilidad del código:
-
+// El operador de agrupación (paréntesis)
+// se usa para agrupar partes de una expresión.
+//
+// Sirve para:
+// - Cambiar el orden de evaluación
+// - Mejorar la legibilidad del código:
 
 console.log(2 + 2 * 4);
 // > 10
 
-console.log(( 2 + 2 ) * 4);
+console.log((2 + 2) * 4);
 // > 16
 
-let miVariable = ( 2 + 2 );
- console.log(miVariable);
+// El resultado de una expresión también puede
+// asignarse a una variable:
+
+let miVariable = (2 + 2);
+
+console.log(miVariable);
 // > 4
 </script>
+
 <script>
-// Escritura poco segura
+// ===============================
+// Tipado débil (coerción de tipos)
+// ===============================
 
-// JavaScript es un lenguaje de escritura débil, lo que significa que un valor de datos no necesita se marquen explícitamente como un tipo de datos específico.A diferencia de un lenguaje con escritura estricta, JavaScript puede inferir el tipo deseado a partir del el contexto de un valor y lo conviertes en ese tipo.Este proceso se denomina coerción de tipos.
+// JavaScript es un lenguaje de tipado débil (o dinámico).
+// Esto significa que los valores no necesitan
+// declararse con un tipo fijo.
+//
+// JavaScript puede inferir el tipo a partir del contexto
+// y convertir automáticamente los valores.
+// Este proceso se llama "coerción de tipos".
 
-// Por ejemplo, si agregas un número a un valor de cadena en un idioma con tipado fuerte, como Python, el resultado es un error:
+// En lenguajes de tipado fuerte, como Python,
+// sumar una cadena y un número produce un error:
 
 // >>> "1" + 1
-// Traceback (most recent call last):
-  // File "<stdin>", line 1, in <module>
-// TypeError: cannot concatenate 'str' and 'int' objects
+// TypeError: cannot concatenate 'str' and 'int'
 
-// En lugar de mostrar un error, JavaScript fuerza el valor numérico a una cadena y concatena los dos valores, el comportamiento previsto más probable al agregar cualquier valor a una cadena:
-  
-console.log("1" + 1); 
+// En JavaScript, en cambio, el número se convierte
+// en cadena y se concatenan ambos valores:
 
+console.log("1" + 1);
 // > "11"
 
-// Los tipos de datos también se pueden coercionar de forma explícita. En el siguiente ejemplo, se fuerza la el valor numérico 100 a un valor de cadena de "100" con la biblioteca integrada de JavaScript Método toString:
-
+// Los tipos también pueden convertirse de forma explícita.
+// En este ejemplo, convertimos un número en una cadena
+// usando el método toString():
 
 let myyVariable = 100;
 
 console.log(typeof myyVariable);
 // > "number"
 
-console.log(myyVariable = myyVariable.toString());
+myyVariable = myyVariable.toString();
+
+console.log(myyVariable);
 // > "100"
 
- console.log(typeof myyVariable);
+console.log(typeof myyVariable);
 // > "string"
 </script>
+
 <script>
+// ===============================
 // Distinción entre mayúsculas y minúsculas
+// ===============================
 
-// A diferencia del HTML y de la mayoría de los CSS, JavaScript distingue entre mayúsculas y minúsculas. Esto significa que siempre debes usar mayúsculas en todo de forma coherente, desde propiedades y métodos integrados en el lenguaje con los identificadores que definas tú mismo.
+// A diferencia de HTML y la mayoría del CSS,
+// JavaScript distingue entre mayúsculas y minúsculas.
+//
+// Esto se aplica tanto a:
+// - Palabras clave
+// - Métodos
+// - Variables
+// - Identificadores definidos por el usuario
 
-console.log( "Log esto." );
-// > Log this.
+console.log("Log esto.");
+// > Log esto.
 
-// console.Log( "Log this too." );
+// console.Log("Log esto también.");
 // > Uncaught TypeError: console.Log is not a function
 
 const myyyVariable = 2;
 
 // console.log(myyyvariable);
-// > Uncaught ReferenceError: myvariable is not defined
+// > Uncaught ReferenceError: myyyvariable is not defined
 
 console.log(myyyVariable);
 // > 2
 </script>
+
 <script>
+// ===============================
 // Espacio en blanco
+// ===============================
 
-// JavaScript no es sensible a los espacios en blanco. Esto significa que el intérprete ignora la cantidad y el tipo (tabulaciones o espacios) de los espacios en blanco utilizados.
+// JavaScript no es sensible al espacio en blanco.
+// El intérprete ignora la cantidad y el tipo
+// de espacios o tabulaciones:
 
+console.log("Log esto"); console.log("Log esto también");
+// > "Log esto"
+// > "Log esto también"
 
-console.log(       "Log esto"  );console.log("Log esto también");
-// > "Log esto."
-// > "Log esto también."
-
-// Sin embargo, la presencia del espacio en blanco puede ser significativa como separador entre tokens léxicos:
+// Sin embargo, el espacio en blanco sí es importante
+// para separar tokens léxicos:
 
 let a;
 
-// [tokens: [let] [a] ]
+// Tokens: [let] [a]
 
 // leta;
+// Tokens: [leta]
 // > Uncaught ReferenceError: leta is not defined
 
-// [tokens: [leta] ]
-
-// Cuando se usa un espacio en blanco para separar tokens léxicos significativos, el analizador ignora la cantidad y el tipo de espacio en blanco:
+// Cuando el espacio se usa para separar tokens,
+// la cantidad no importa:
 
 let           b                             =                           2;
 
-// [tokens: [let] [b] [=] [2] ]
+// Tokens: [let] [b] [=] [2]
 
-// Lo mismo ocurre con los saltos de línea, aunque hay casos en los que pueden causar problemas cuando finaliza una sentencia de forma prematura):
-
+// Los saltos de línea también suelen ignorarse,
+// aunque en algunos casos pueden causar
+// finalización automática de sentencias:
 
 let c
 =
 2;
 
-// [tokens: [let] [c] [=] [2] ]
+// Tokens: [let] [c] [=] [2]
 
-// Desde el punto de vista estilístico, algunos tipos de sentencias suelen ocupar una sola línea:
+// Por convención, muchas sentencias se escriben
+// en una sola línea:
 
 let z = 1;
 let o = 2;
 
-// Algunas sentencias suelen usar varias líneas:
+// Otras suelen ocupar varias líneas:
 
-
-if ( z == 2 ) {
+if (z === 2) {
   console.log("algún comportamiento");
 }
 
-// Sin embargo, estas convenciones son solo para facilitar la lectura. JavaScript interpreta los ejemplos anteriores de la misma manera que lo siguiente:
-
+// Pero JavaScript interpreta esto de la misma forma:
 
 let w=1;let y=2;
 
-if(w==2){console.log("algún comportamiento")};
+if(w===2){console.log("algún comportamiento")};
 
-// Debido a esto, un proceso automatizado que quita los espacios en blanco no esenciales de archivos de secuencia de comandos para reducir el tamaño de transferencia es un paso común en la preparación de JavaScript para un entorno de producción, junto con otras optimizaciones.
+// Debido a esto, es común que en producción
+// se elimine el espacio en blanco innecesario
+// para reducir el tamaño del archivo (minificación).
 
-// El uso de caracteres de espacio en blanco en JavaScript depende en gran medida del autor y las preferencias de los encargados de mantenimiento. Proyectos de JavaScript con varios desarrolladores Contribuir código a menudo sugiere o aplica ciertas convenciones de espacio en blanco a garantizar un formato coherente del código, por ejemplo, el uso de tabulaciones o espacios para aplicar sangría a las sentencias anidadas:
-
+// En proyectos reales, los equipos suelen definir
+// reglas de estilo para mantener el código legible:
 
 let myyyyVariable = 10;
 
@@ -170,5 +231,6 @@ if (myyyyVariable > 5) {
 // > "Esta variable es un número."
 // > "Esta variable es mayor que cinco."
 </script>
+
 </body>
 </html>
